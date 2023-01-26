@@ -119,7 +119,7 @@ export const useMetamask = () => {
         let obj = {
           logo: item?.logo,
           coinName: item?.name,
-
+          symbol: item?.symbol,
           quantity: item?.balance?.toFixed(5),
         };
         return obj;
@@ -192,6 +192,12 @@ export const useMetamask = () => {
       console.log("Please connect the metamask wallet");
     }
   };
+  const switchNetwork = async (chainId) => {
+    await window.ethereum.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId }],
+    });
+  };
 
   useEffect(() => {
     addWalletlistener();
@@ -205,5 +211,6 @@ export const useMetamask = () => {
     account,
     connectToMetamask,
     assets,
+    switchNetwork,
   };
 };
