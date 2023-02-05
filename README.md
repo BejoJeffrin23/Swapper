@@ -12,6 +12,10 @@ You may also see any lint errors in the console.
 
 # Swapper `Description`
 
+Once the metamask wallet is connected , the balances are fetched and displayed
+
+The chain changing function is implemented to switch chain from the platform
+
 Uniswap is used as the liquidity provider and the Uniswap V3 router is used to perform the swap
 
 In this project the multihop swap is experimented with multicall
